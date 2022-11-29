@@ -3,8 +3,7 @@
 Restart notification for pending updates
 USED VIA TASK SCHEDULER
 
-- Added force restart
-- Added toast notification @ 45m, 25m, 5m and 1m.
+Note. This script is to be used alongside a 'master' update script, such as HPIA_Invoke_AutoUpdate_GH
 
 #>
 
