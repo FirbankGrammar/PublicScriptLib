@@ -9,15 +9,9 @@ USED VIA TASK SCHEDULER
 #>
 
 #> Bypasses script policies & enables TLS1.2
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Force
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-#> Local C drive folders
-$HPDriverFolder = "C:\Firbank\HPDriver\NotfScript"
-
-# Script Download Path
-$url = "https://hpia.hpcloud.hp.com/downloads/hpia/hp-hpia-5.1.5.exe"
-$outpath = "C:\Firbank\HPDriver\ImageAssistant\hp-hpia-5.1.5.exe"
+$progressbar = New-BTProgressBar -Title 'Please save your open files' -Status 'Automatically restarting in' -Value 0.3 -ValueDisplay '45 minutes'
+New-BurntToastNotification -Text 'Critical Updates Pending', 'Your device is required to restart' -UniqueIdentifier 'pb_45' -ProgressBar $progressbar -AppLogo 'https://i.imgur.com/ZUVZM3a.png' | Start-Sleep -Seconds 5
 
 
 
